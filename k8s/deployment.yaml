@@ -15,7 +15,7 @@ spec:
         run: my-source-repo-suchita
     spec:
       containers:
-      - image: $$USERNAME/vatanbokade/test-docker-repo:$SHORT_SHA
+      - image: vatanbokade/test-docker-repo:$SHORT_SHA
         name: my-source-repo-suchita
         ports:
         - containerPort: 3000
