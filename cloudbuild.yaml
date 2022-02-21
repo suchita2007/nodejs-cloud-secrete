@@ -26,7 +26,7 @@ steps:
   - name: 'gcr.io/cloud-builders/kubectl'
     args: ['apply', '-f', 'k8s/']
     env:
-    - 'CLOUDSDK_COMPUTE_REGION=us-central1'
+    - 'CLOUDSDK_COMPUTE_REGION=us-central1-c'
     - 'CLOUDSDK_CONTAINER_CLUSTER=cluster-vatan-public'
   #step 4
   - name: 'gcr.io/cloud-builders/kubectl'
@@ -38,7 +38,7 @@ steps:
      'my-source-repo-suchita=vatanbokade/test-docker-repo:$SHORT_SHA'
     ]
     env:
-    - 'CLOUDSDK_COMPUTE_REGION=us-central1'
+    - 'CLOUDSDK_COMPUTE_REGION=us-central1-c'
     - 'CLOUDSDK_CONTAINER_CLUSTER=cluster-vatan-public'
 availableSecrets:
     secretManager:
