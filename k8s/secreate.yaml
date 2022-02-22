@@ -4,7 +4,7 @@ data:
 kind: Secret
 metadata:
   creationTimestamp: "2022-02-22T11:29:47Z"
-  name: regcred1
+  name: regcred
   namespace: default
   resourceVersion: "556672"
   uid: b1755934-e367-4709-a589-4f3cff5a6ee6
