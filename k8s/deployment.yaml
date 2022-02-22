@@ -15,7 +15,7 @@ spec:
         run: my-source-repo-suchita
     spec:
       containers:
-      - image: suchita2007/node-js:$SHORT_SHA
+      - image: suchita2007/node-js
         name: my-source-repo-suchita
         ports:
         - containerPort: 3000
