@@ -9,5 +9,5 @@ spec:
     ports:
     - containerPort: 3000    
   imagePullSecrets:
-  - name: regcred1
+  - name: regcred
   
