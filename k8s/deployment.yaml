@@ -19,3 +19,5 @@ spec:
         name: my-source-repo-suchita
         ports:
         - containerPort: 3000
+     imagePullSecrets:
+     - name: regcred
