@@ -5,7 +5,7 @@ metadata:
 spec:
   containers:
   - name: my-source-repo-suchita
-    image: vatanbokade/test-docker-repo:$SHORT_SHA
+    image: suchita2007/node-js:$SHORT_SHA
     ports:
     - containerPort: 3000    
   imagePullSecrets:
