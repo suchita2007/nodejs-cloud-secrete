@@ -14,13 +14,13 @@ steps:
     args: ['run', 'build']
   # [END cloudbuild_npm_node]
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'vatanbokade/test-docker-repo:$SHORT_SHA', '.']
+    args: ['build', '-t', 'suchita2007/node-js:$SHORT_SHA', '.']
   - name: 'gcr.io/cloud-builders/docker'
     entrypoint: 'bash'
     args: ['-c', 'docker login --username=$$NAME --password=$$PASS']
     secretEnv: ['NAME', 'PASS']
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'vatanbokade/test-docker-repo:$SHORT_SHA']
+    args: ['push', 'suchita2007/node-js:$SHORT_SHA']
   #this is test repo
   #This is main branch
   - name: 'gcr.io/cloud-builders/kubectl'
@@ -35,16 +35,16 @@ steps:
      'image', 
      'deployment', 
      'my-source-repo-suchita', 
-     'my-source-repo-suchita=vatanbokade/test-docker-repo:$SHORT_SHA'
+     'my-source-repo-suchita=suchita2007/node-js:$SHORT_SHA'
     ]
     env:
     - 'CLOUDSDK_COMPUTE_REGION=us-central1-c'
     - 'CLOUDSDK_CONTAINER_CLUSTER=cluster-vatan-public'
 availableSecrets:
     secretManager:
-    - versionName: projects/$PROJECT_ID/secrets/SECRET1/versions/latest
+    - versionName: projects/$PROJECT_ID/secrets/SECRET-A/versions/latest
       env: 'PASS'
-    - versionName: projects/$PROJECT_ID/secrets/SECRET2/versions/latest
+    - versionName: projects/$PROJECT_ID/secrets/SECRET-B/versions/latest
       env: 'NAME'
 images: 
-  - 'vatanbokade/test-docker-repo:$SHORT_SHA'
+  - 'suchita2007/node-js:$SHORT_SHA'
